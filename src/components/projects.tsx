@@ -29,7 +29,7 @@ export default function Projects() {
       description:
         "ComX fixes workload distribution with nested groups. My first full-stack project taught me everything about React, Node.js, and database design.",
       photo: "/comx/6.png",
-      url: "",
+      url: "/ComX",
       tags: ["React", "Node.js", "Postgres"],
       date: "",
       featured: false,
@@ -40,7 +40,7 @@ export default function Projects() {
       description:
         "ComX fixes workload distribution with nested groups. My first full-stack project taught me everything about React, Node.js, and database design.",
       photo: "/comx/6.png",
-      url: "",
+      url: "/ComX",
       tags: ["React", "Node.js", "Postgres"],
       date: "",
       featured: false,
@@ -51,7 +51,7 @@ export default function Projects() {
       description:
         "ComX fixes workload distribution with nested groups. My first full-stack project taught me everything about React, Node.js, and database design.",
       photo: "/comx/6.png",
-      url: "",
+      url: "/ComX",
       tags: ["React", "Node.js", "Postgres"],
       date: "",
       featured: false,
@@ -62,7 +62,7 @@ export default function Projects() {
       description:
         "ComX fixes workload distribution with nested groups. My first full-stack project taught me everything about React, Node.js, and database design.",
       photo: "/comx/6.png",
-      url: "",
+      url: "/ComX",
       tags: ["React", "Node.js", "Postgres"],
       date: "",
       featured: false,

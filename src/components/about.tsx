@@ -60,14 +60,12 @@ export default function About() {
     "OpenGL",
   ];
 
-  // Refs for different sections to check if they're in view
   const titleRef = useRef(null);
   const bioRef = useRef(null);
   const linksRef = useRef(null);
   const skillsHeaderRef = useRef(null);
   const skillsRef = useRef(null);
 
-  // Check if elements are in view
   const titleInView = useInView(titleRef, { once: true, amount: 0.5 });
   const bioInView = useInView(bioRef, { once: true, amount: 0.2 });
   const linksInView = useInView(linksRef, { once: true, amount: 0.5 });
@@ -77,7 +75,6 @@ export default function About() {
   });
   const skillsInView = useInView(skillsRef, { once: true, amount: 0.1 });
 
-  // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -259,14 +256,8 @@ export default function About() {
               {skills.map((skill, index) => (
                 <motion.div
                   key={index}
-                  className="bg-neutral-200 dark:bg-neutral-800 px-2 py-1 rounded-md text-xs sm:text-sm cursor-pointer shadow-sm hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors"
+                  className="bg-neutral-200 dark:bg-neutral-800 px-2 py-1 rounded-md text-xs sm:text-sm cursor-pointer shadow-sm hover:bg-neutral-700 hover:text-white dark:hover:bg-neutral-300 dark:hover:text-neutral-900 transition-all duration-200"
                   variants={item}
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "#565bac",
-                    color: "white",
-                    transition: { duration: 0.2 },
-                  }}
                 >
                   {skill}
                 </motion.div>

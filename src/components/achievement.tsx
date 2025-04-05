@@ -17,13 +17,24 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import Link from "next/link";
 
 interface Achievement {
   title: string;
   description: string;
+  description_long: string;
   highlight: string;
   icon: React.ReactNode;
   importance: "high" | "medium" | "low";
+  link: string;
 }
 
 interface Category {
@@ -245,12 +256,29 @@ function AchievementCard({
           {achievement.description}
         </motion.p>
 
-        <motion.div
-          className="flex items-center text-sm text-primary/80 opacity-0 group-hover:opacity-100 transition-all duration-300"
-          initial={{ x: -10 }}
-          whileHover={{ x: 0 }}
-        >
-          <span>Learn more</span>
+        <motion.div className="flex items-center text-sm text-primary/80 opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <Dialog>
+            <DialogTrigger asChild>
+              <div className="flex justify-center items-center cursor-pointer translate-x-1">
+                <span>Learn more</span>
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </div>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>{achievement.title}</DialogTitle>
+                <DialogDescription>
+                  {achievement.description_long}
+                </DialogDescription>
+                <Link
+                  href={achievement.link}
+                  className="text-sm font-semibold underline"
+                >
+                  Link
+                </Link>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
           <motion.div
             animate={{ x: [0, 5, 0] }}
             transition={{
@@ -260,9 +288,7 @@ function AchievementCard({
               ease: "easeInOut",
               times: [0, 0.5, 1],
             }}
-          >
-            <ArrowRight className="ml-1 h-4 w-4" />
-          </motion.div>
+          ></motion.div>
         </motion.div>
       </div>
 
@@ -313,6 +339,9 @@ export default function Achievement() {
             highlight: "Finalist",
             icon: <Trophy className="h-5 w-5" />,
             importance: "high",
+            description_long:
+              "National-level hackathon organized by the Government of India",
+            link: "",
           },
           {
             title: "Three Musketeers Competitive Coding Contest",
@@ -320,6 +349,9 @@ export default function Achievement() {
             highlight: "2nd Place",
             icon: <Award className="h-5 w-5" />,
             importance: "high",
+            description_long:
+              "Prestigious coding competition at IIIT Allahabad",
+            link: "",
           },
           {
             title: "AlgoRush",
@@ -327,6 +359,8 @@ export default function Achievement() {
             highlight: "7th Place",
             icon: <Code className="h-5 w-5" />,
             importance: "medium",
+            description_long: "Competitive algorithm contest at IIIT Allahabad",
+            link: "",
           },
           {
             title: "Competitive Coding Wing Trials",
@@ -334,6 +368,8 @@ export default function Achievement() {
             highlight: "3rd Place",
             icon: <Award className="h-5 w-5" />,
             importance: "medium",
+            description_long: "Internal coding competition at IIIT Allahabad",
+            link: "",
           },
           {
             title: "Code-X-Culture",
@@ -342,6 +378,9 @@ export default function Achievement() {
             highlight: "8th Place",
             icon: <Code className="h-5 w-5" />,
             importance: "medium",
+            description_long:
+              "Campus-wide coding contest with participants from all departments",
+            link: "",
           },
           {
             title: "Code Red",
@@ -349,6 +388,9 @@ export default function Achievement() {
             highlight: "Best Fresher",
             icon: <Star className="h-5 w-5" />,
             importance: "medium",
+            description_long:
+              "National Level Competitive coding event by IIITA",
+            link: "",
           },
         ],
       },
@@ -363,6 +405,9 @@ export default function Achievement() {
             highlight: "AIR 1932",
             icon: <Zap className="h-5 w-5" />,
             importance: "high",
+            description_long:
+              "National-level engineering entrance examination in India",
+            link: "",
           },
         ],
       },
@@ -396,7 +441,10 @@ export default function Achievement() {
   const isHeaderInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
   return (
-    <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 py-12 md:py-16 bg-background" id="Achivements">
+    <div
+      className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 py-12 md:py-16 bg-background"
+      id="Achivements"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={sectionRef}

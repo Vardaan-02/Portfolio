@@ -10,10 +10,10 @@ export const Bold = ({
   className?: string;
 }) => {
   return (
-    <span className="relative hover:bg-neutral-900  group/cover inline-block dark:bg-neutral-900 bg-neutral-200 px-1 mx-1 py-0 transition duration-200 rounded-sm">
+    <span className="relative hover:bg-neutral-900 dark:hover:bg-white group/cover inline-block dark:bg-neutral-900 bg-neutral-200 px-1 mx-1 py-0 rounded-sm transition-all duration-100">
       <span
         className={cn(
-          "dark:text-white inline-block text-neutral-900 relative z-20 group-hover/cover:text-white transition duration-200",
+          "dark:text-white inline-block text-neutral-900 relative z-20 group-hover/cover:text-white dark:group-hover/cover:text-neutral-900 transition duration-200",
           className
         )}
       >
@@ -36,7 +36,7 @@ export const CircleIcon = ({
   return (
     <span
       className={cn(
-        `pointer-events-none animate-pulse group-hover/cover:opacity-100 group h-2 w-2 rounded-full bg-neutral-600 dark:bg-white opacity-20 group-hover/cover:bg-white`,
+        `pointer-events-none animate-pulse group-hover/cover:opacity-100 group h-2 w-2 rounded-full bg-neutral-600 dark:bg-white opacity-20 group-hover/cover:bg-neutral-600 dark:group-hover/cover:bg-white`,
         className
       )}
     ></span>

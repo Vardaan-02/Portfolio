@@ -13,10 +13,8 @@ import {
   Lightbulb,
   GraduationCap,
   Calendar,
-  Star,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
   CardContent,
@@ -30,12 +28,12 @@ import { useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const colors = {
-  primary: "#4F46E5", 
-  secondary: "#7C3AED", 
-  accent1: "#EC4899", 
-  accent2: "#06B6D4", 
-  accent3: "#10B981", 
-  accent4: "#F59E0B", 
+  primary: "#4F46E5",
+  secondary: "#7C3AED",
+  accent1: "#EC4899",
+  accent2: "#06B6D4",
+  accent3: "#10B981",
+  accent4: "#F59E0B",
   gradient: "linear-gradient(to right, #4F46E5, #7C3AED, #EC4899)",
 };
 
@@ -46,142 +44,94 @@ export default function Education() {
         <HeaderAnimation />
         <MainEducationCard />
 
-        <Tabs defaultValue="courses" className="w-full">
-          <TabsList className="grid grid-cols-2 mb-8 w-full max-w-md mx-auto">
-            <TabsTrigger value="courses">Key Subjects</TabsTrigger>
-            <TabsTrigger value="skills">Technical Skills</TabsTrigger>
-          </TabsList>
+        <div className="space-y-4">
+          <SectionHeader
+            icon={<Book className="h-6 w-6 text-primary" />}
+            title="Key Subjects Studied"
+          />
 
-          <TabsContent value="courses" className="space-y-4">
-            <SectionHeader
-              icon={<Book className="h-6 w-6 text-primary" />}
-              title="Key Subjects Studied"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <AnimatedCourseCard
+              icon={<Code />}
+              title="Problem Solving & Programming"
+              description="Fundamental coding techniques, logical thinking, and competitive programming strategies."
+              cg={10}
+              delay={0.1}
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <AnimatedCourseCard
-                icon={<Code />}
-                title="Problem Solving & Programming"
-                description="Fundamental coding techniques, logical thinking, and competitive programming strategies."
-                cg={10}
-                delay={0.1}
-              />
-
-              <AnimatedCourseCard
-                icon={<Database />}
-                title="Data Structures & Algorithms"
-                description="Arrays, linked lists, trees, graphs, recursion, dynamic programming, and greedy algorithms."
-                cg={10}
-                delay={0.2}
-              />
-
-              <AnimatedCourseCard
-                icon={<Lightbulb />}
-                title="Design and Analysis of Algorithms"
-                description="Time complexity analysis, advanced sorting techniques, graph algorithms, and optimization strategies."
-                cg={9}
-                delay={0.3}
-              />
-
-              <AnimatedCourseCard
-                icon={<Cpu />}
-                title="Operating Systems"
-                description="Process management, memory management, file systems, concurrency, and synchronization techniques."
-                cg={8}
-                delay={0.4}
-              />
-
-              <AnimatedCourseCard
-                icon={<Database />}
-                title="Database Management Systems"
-                description="Relational databases, SQL, indexing, transactions, and normalization."
-                cg={9}
-                delay={0.5}
-              />
-
-              <AnimatedCourseCard
-                icon={<Code />}
-                title="Object-Oriented Methodologies"
-                description="OOP principles: encapsulation, inheritance, polymorphism, and design patterns in C++ and Java."
-                cg={10}
-                delay={0.6}
-              />
-
-              <AnimatedCourseCard
-                icon={<Globe />}
-                title="Computer Networks"
-                description="Network layers, TCP/IP, routing algorithms, security protocols, and networking applications."
-                cg={9}
-                delay={0.7}
-              />
-
-              <AnimatedCourseCard
-                icon={<Globe />}
-                title="Web Development"
-                description="Front-end (HTML, CSS, JavaScript, React.js) and back-end (Node.js, databases, authentication)."
-                cg={10}
-                delay={0.8}
-              />
-
-              <AnimatedCourseCard
-                icon={<Server />}
-                title="Computer Graphics and Visualization"
-                description="OpenGL basics, rendering techniques, and 3D transformations."
-                cg={9}
-                delay={0.9}
-              />
-
-              <AnimatedCourseCard
-                icon={<Code />}
-                title="Software Engineering"
-                description="Software development life cycle (SDLC), agile methodologies, version control (Git), and testing."
-                cg={9}
-                delay={1.0}
-              />
-            </div>
-          </TabsContent>
-
-          <TabsContent value="skills">
-            <SectionHeader
-              icon={<Code className="h-6 w-6 text-primary" />}
-              title="Technical Skills Gained"
+            <AnimatedCourseCard
+              icon={<Database />}
+              title="Data Structures & Algorithms"
+              description="Arrays, linked lists, trees, graphs, recursion, dynamic programming, and greedy algorithms."
+              cg={10}
+              delay={0.2}
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-4">
-                <AnimatedSkillBar name="C/C++" percentage={92} delay={0.1} />
-                <AnimatedSkillBar name="Java" percentage={85} delay={0.2} />
-                <AnimatedSkillBar name="Python" percentage={90} delay={0.3} />
-                <AnimatedSkillBar
-                  name="JavaScript/TypeScript"
-                  percentage={95}
-                  delay={0.4}
-                />
-                <AnimatedSkillBar name="React.js" percentage={88} delay={0.5} />
-              </div>
+            <AnimatedCourseCard
+              icon={<Lightbulb />}
+              title="Design and Analysis of Algorithms"
+              description="Time complexity analysis, advanced sorting techniques, graph algorithms, and optimization strategies."
+              cg={9}
+              delay={0.3}
+            />
 
-              <div className="space-y-4">
-                <AnimatedSkillBar name="Node.js" percentage={82} delay={0.6} />
-                <AnimatedSkillBar name="SQL" percentage={80} delay={0.7} />
-                <AnimatedSkillBar
-                  name="Data Structures"
-                  percentage={95}
-                  delay={0.8}
-                />
-                <AnimatedSkillBar
-                  name="Algorithms"
-                  percentage={90}
-                  delay={0.9}
-                />
-                <AnimatedSkillBar
-                  name="Git & Version Control"
-                  percentage={85}
-                  delay={1.0}
-                />
-              </div>
-            </div>
-          </TabsContent>
-        </Tabs>
+            <AnimatedCourseCard
+              icon={<Cpu />}
+              title="Operating Systems"
+              description="Process management, memory management, file systems, concurrency, and synchronization techniques."
+              cg={8}
+              delay={0.4}
+            />
+
+            <AnimatedCourseCard
+              icon={<Database />}
+              title="Database Management Systems"
+              description="Relational databases, SQL, indexing, transactions, and normalization."
+              cg={9}
+              delay={0.5}
+            />
+
+            <AnimatedCourseCard
+              icon={<Code />}
+              title="Object-Oriented Methodologies"
+              description="OOP principles: encapsulation, inheritance, polymorphism, and design patterns in C++ and Java."
+              cg={10}
+              delay={0.6}
+            />
+
+            <AnimatedCourseCard
+              icon={<Globe />}
+              title="Computer Networks"
+              description="Network layers, TCP/IP, routing algorithms, security protocols, and networking applications."
+              cg={9}
+              delay={0.7}
+            />
+
+            <AnimatedCourseCard
+              icon={<Globe />}
+              title="Web Development"
+              description="Front-end (HTML, CSS, JavaScript, React.js) and back-end (Node.js, databases, authentication)."
+              cg={10}
+              delay={0.8}
+            />
+
+            <AnimatedCourseCard
+              icon={<Server />}
+              title="Computer Graphics and Visualization"
+              description="OpenGL basics, rendering techniques, and 3D transformations."
+              cg={9}
+              delay={0.9}
+            />
+
+            <AnimatedCourseCard
+              icon={<Code />}
+              title="Software Engineering"
+              description="Software development life cycle (SDLC), agile methodologies, version control (Git), and testing."
+              cg={9}
+              delay={1.0}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -377,77 +327,6 @@ function AnimatedCourseCard({
           </div>
         </CardContent>
       </Card>
-    </motion.div>
-  );
-}
-
-interface SkillBarProps {
-  name: string;
-  percentage: number;
-  delay: number;
-}
-
-function AnimatedSkillBar({ name, percentage, delay }: SkillBarProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <motion.div
-      ref={ref}
-      className="space-y-1"
-      initial={{ opacity: 0, y: 10 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-      transition={{ duration: 0.5, delay: delay }}
-    >
-      <div className="flex justify-between items-center">
-        <span className="text-sm font-medium">{name}</span>
-        <motion.div
-          className="flex items-center gap-1"
-          initial={{ scale: 0 }}
-          animate={isInView ? { scale: 1 } : { scale: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 400,
-            damping: 10,
-            delay: delay + 0.2,
-          }}
-        >
-          <Star
-            className="h-3 w-3"
-            style={{ fill: colors.accent1, color: colors.accent1 }}
-          />
-          <span className="text-xs">{percentage}%</span>
-        </motion.div>
-      </div>
-      <motion.div
-        className="w-full"
-        initial={{ width: 0 }}
-        animate={isInView ? { width: "100%" } : { width: 0 }}
-        transition={{ duration: 0.8, delay: delay + 0.3 }}
-      >
-        <Progress
-          value={0}
-          className="h-2"
-          style={{ background: `${colors.primary}20` }}
-        />
-        <motion.div
-          className="relative"
-          initial={{ width: 0 }}
-          animate={isInView ? { width: `${percentage}%` } : { width: 0 }}
-          transition={{ duration: 1, delay: delay + 0.4 }}
-        >
-          <Progress
-            value={100}
-            className="h-2 absolute top-[-8px]"
-            style={{
-              background: cn(
-                "transparent",
-                `--tw-progress-fill: linear-gradient(to right, ${colors.primary}, ${colors.accent1})`
-              ),
-            }}
-          />
-        </motion.div>
-      </motion.div>
     </motion.div>
   );
 }
