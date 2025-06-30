@@ -72,7 +72,7 @@ export default function BasicInfo() {
             className="text-neutral-800 dark:text-neutral-200 ml-2 text-sm md:text-lg lg:text-3xl z-[999]"
             variants={fadeInUp}
           >
-            Sophomore at Indian Institute of Information Technology Allahabad
+            Pre-Final Year at Indian Institute of Information Technology Allahabad
           </motion.p>
 
           <motion.p

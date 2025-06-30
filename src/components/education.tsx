@@ -163,7 +163,7 @@ function MainEducationCard() {
               <div className="flex items-center gap-2 mt-1">
                 <span className="font-medium">CGPA:</span>
                 <Badge variant="outline" className="font-semibold">
-                  9.1/10
+                  8.96/10
                 </Badge>
               </div>
             </div>
