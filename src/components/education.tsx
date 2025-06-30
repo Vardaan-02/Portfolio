@@ -6,7 +6,6 @@ import { useRef } from "react";
 import {
   Book,
   Code,
-  Server,
   Database,
   Globe,
   Cpu,
