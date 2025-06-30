@@ -52,14 +52,6 @@ export default function Education() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <AnimatedCourseCard
-              icon={<Code />}
-              title="Problem Solving & Programming"
-              description="Fundamental coding techniques, logical thinking, and competitive programming strategies."
-              cg={10}
-              delay={0.1}
-            />
-
-            <AnimatedCourseCard
               icon={<Database />}
               title="Data Structures & Algorithms"
               description="Arrays, linked lists, trees, graphs, recursion, dynamic programming, and greedy algorithms."
@@ -105,30 +97,6 @@ export default function Education() {
               description="Network layers, TCP/IP, routing algorithms, security protocols, and networking applications."
               cg={9}
               delay={0.7}
-            />
-
-            <AnimatedCourseCard
-              icon={<Globe />}
-              title="Web Development"
-              description="Front-end (HTML, CSS, JavaScript, React.js) and back-end (Node.js, databases, authentication)."
-              cg={10}
-              delay={0.8}
-            />
-
-            <AnimatedCourseCard
-              icon={<Server />}
-              title="Computer Graphics and Visualization"
-              description="OpenGL basics, rendering techniques, and 3D transformations."
-              cg={9}
-              delay={0.9}
-            />
-
-            <AnimatedCourseCard
-              icon={<Code />}
-              title="Software Engineering"
-              description="Software development life cycle (SDLC), agile methodologies, version control (Git), and testing."
-              cg={9}
-              delay={1.0}
             />
           </div>
         </div>
